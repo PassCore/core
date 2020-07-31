@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passcore", "Passcore\Passcore.csproj", "{EAEC42A9-A906-44D6-9145-AF899FF65C91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAEC42A9-A906-44D6-9145-AF899FF65C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEC42A9-A906-44D6-9145-AF899FF65C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEC42A9-A906-44D6-9145-AF899FF65C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEC42A9-A906-44D6-9145-AF899FF65C91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0726E017-A4DC-414D-B698-619239FEA355}
+	EndGlobalSection
+EndGlobal
