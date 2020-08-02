@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passcore", "Passcore\Passcore.csproj", "{EAEC42A9-A906-44D6-9145-AF899FF65C91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passcore", "Passcore\Passcore.csproj", "{EAEC42A9-A906-44D6-9145-AF899FF65C91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Items", "Project Items", "{F555B2E6-5681-4509-ADE5-68B17A0112ED}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

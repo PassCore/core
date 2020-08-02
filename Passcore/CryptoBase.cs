@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
-using System.Text;
 using Org.BouncyCastle.Crypto.Digests;
 using Org.BouncyCastle.Crypto.Generators;
 using Org.BouncyCastle.Crypto.Macs;
@@ -9,7 +7,7 @@ using Org.BouncyCastle.Crypto.Parameters;
 
 namespace Passcore
 {
-    static class CryptoBase
+    internal static class CryptoBase
     {
         public static byte[] Shake256(byte[] plain, int digit)
         {
