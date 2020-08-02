@@ -85,7 +85,7 @@ namespace Passcore
             )
         {
             // sort dictionary, make result stable
-            (char[] dict, int weight)[] sortedDict = dictionaries
+            (char[] dict, int occur)[] sortedDict = dictionaries
                 .Select(d =>
                 {
                     // sort each dict
@@ -99,13 +99,45 @@ namespace Passcore
                 .ToArray();
 
             // get dictionary metadata
-            (int, int)[] dictDef = sortedDict.Select(sd => (sd.dict.Length, sd.weight)).ToArray();
+            (int, int)[] dictDef = sortedDict.Select(sd => (sd.dict.Length, sd.occur)).ToArray();
 
             byte[] masterKey = DeriveKey(master, info, salt);
             (int group, int index)[] tokens = GeneratePasswordTokens(masterKey, length, dictDef);
 
             // replace token with real dictionary items
             return string.Concat(tokens.Select(t => sortedDict[t.group].dict[t.index]));
+        }
+
+        public static double PasswordItemEntropy((char[] dict, int occur)[] dictionaries, int length)
+        {
+            var m = GetDictionaryMeta(dictionaries);
+            int gCount = m.Length;
+            int remain = length - m.Select(d => d.occurence).Sum();
+            if (remain < 0) throw new ArgumentOutOfRangeException();
+            double[] gropP = m
+                .Select(d => d.occurence + (double)remain / gCount)
+                .Select(o => o / length)
+                .ToArray();
+
+            double entropy = 0;
+            for (int i = 0; i < gCount; i++)
+            {
+                int n = m[i].itemCount;
+                double itemP = gropP[i] / n;
+                double itemE = itemP * Math.Log2(itemP);
+                entropy += itemE * n;
+            }
+            return -entropy;
+        }
+
+        public static double PasswordEntropy((char[] dict, int occur)[] dictionaries, int length)
+        {
+            return PasswordItemEntropy(dictionaries, length) * length;
+        }
+
+        private static (int itemCount, int occurence)[] GetDictionaryMeta((char[] dict, int occur)[] dictionaries)
+        {
+            return dictionaries.Select(sd => (sd.dict.Length, sd.occur)).ToArray();
         }
     }
 }

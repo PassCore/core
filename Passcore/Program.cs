@@ -29,6 +29,17 @@ namespace Passcore
                 "salt"
             );
             Console.WriteLine(pw2);
+
+            double e = Passcore.PasswordEntropy(new (char[] dict, int occur)[]
+            {
+                (Tables.Base64,0),
+            }, 16);
+            Console.WriteLine(e);
+            double e2 = Passcore.PasswordEntropy(new (char[] dict, int occur)[]
+            {
+                (Tables.Number,0),
+            }, 16);
+            Console.WriteLine(e2);
         }
     }
 }
