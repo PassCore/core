@@ -124,7 +124,7 @@ namespace Passcore
             {
                 int n = m[i].itemCount;
                 double itemP = gropP[i] / n;
-                double itemE = itemP * Math.Log2(itemP);
+                double itemE = itemP * Math.Log(itemP, 2.0);
                 entropy += itemE * n;
             }
             return -entropy;

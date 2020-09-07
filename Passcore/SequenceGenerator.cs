@@ -42,7 +42,7 @@ namespace Passcore
 
         private int GetNeededBitCount(int events)
         {
-            return (int)Math.Log2(events) + 1;
+            return (int)Math.Log(events, 2.0) + 1;
         }
 
         public T[] Shuffle<T>(IEnumerable<T> seq)
