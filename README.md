@@ -11,3 +11,7 @@ For old core, see: https://github.com/Passcore/old-core
 [GitHub](https://github.com/chrishaly/bc-csharp)  
 [NuGet](https://www.nuget.org/packages/BouncyCastle.NetCore/)  
 [LICENSE](https://www.bouncycastle.org/licence.html)
+
+## Open Source License
+
+Proudly be licensed under [OKZPL](https://raw.githubusercontent.com/Passcore/core/master/LICENSE).
